@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أبو الشيماء لتنظيف وتعقيم الخزانات – مكة المكرمة</title>
+  <meta name="description" content="خدمة تنظيف وتعقيم خزانات المياه في مكة المكرمة – غسيل احترافي معتمد" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark: #0a2463;
+      --blue-mid:  #1e6fbf;
+      --blue-light:#3da5d9;
+      --cyan:      #00b4d8;
+      --white:     #ffffff;
+      --gold:      #f4c430;
+      --green-wa:  #25d366;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0a2463 0%, #1e6fbf 50%, #00b4d8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px 12px 80px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ── water bubbles background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.08) 0 60px, transparent 60px),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.06) 0 90px, transparent 90px),
+        radial-gradient(circle at 50% 85%, rgba(0,180,216,.18) 0 120px, transparent 120px),
+        radial-gradient(circle at 90% 70%, rgba(255,255,255,.05) 0 70px, transparent 70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── wave top decoration ── */
+    .wave-top {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--gold), var(--cyan), var(--gold));
+      z-index: 10;
+    }
+
+    /* ── card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255,255,255,.97);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35), 0 0 0 2px rgba(255,255,255,.3);
+      animation: slideUp .7s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    @keyframes slideUp {
+      from { opacity:0; transform:translateY(50px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── header ── */
+    .card-header {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      padding: 36px 24px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 40px;
+      background: rgba(255,255,255,.97);
+      border-radius: 50%;
+    }
+
+    .logo-circle {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      border: 4px solid rgba(255,255,255,.4);
+      box-shadow: 0 8px 24px rgba(0,180,216,.5);
+      font-size: 40px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 8px 24px rgba(0,180,216,.5); }
+      50%      { box-shadow: 0 8px 36px rgba(0,180,216,.9); }
+    }
+
+    .brand-name {
+      color: var(--white);
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.3);
+      margin-bottom: 6px;
+    }
+    .brand-sub {
+      color: var(--gold);
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ── city badge ── */
+    .city-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      color: #cce8ff;
+      font-size: .82rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 4px 14px;
+      margin-top: 10px;
+    }
+
+    /* ── body ── */
+    .card-body { padding: 40px 24px 28px; }
+
+    /* offer strip */
+    .offer-strip {
+      background: linear-gradient(135deg, var(--gold) 0%, #e8a800 100%);
+      border-radius: 14px;
+      padding: 14px 20px;
+      text-align: center;
+      margin-bottom: 26px;
+      box-shadow: 0 6px 20px rgba(244,196,48,.4);
+    }
+    .offer-strip .offer-label {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #7a5200;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .offer-strip .offer-text {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--blue-dark);
+    }
+
+    /* section title */
+    .section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      border-right: 4px solid var(--cyan);
+      padding-right: 10px;
+      margin-bottom: 14px;
+    }
+
+    /* services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+    .service-item {
+      background: linear-gradient(135deg, #eef7ff, #dceeff);
+      border-radius: 12px;
+      padding: 14px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      border: 1px solid rgba(30,111,191,.15);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(30,111,191,.2);
+    }
+    .service-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+    /* features */
+    .features-list {
+      list-style: none;
+      margin-bottom: 26px;
+    }
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px dashed rgba(30,111,191,.15);
+      font-size: .9rem;
+      font-weight: 600;
+      color: #1a3a5c;
+    }
+    .features-list li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 26px; height: 26px;
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .8rem;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0,184,148,.4);
+    }
+
+    /* phone number */
+    .phone-box {
+      background: var(--blue-dark);
+      border-radius: 14px;
+      padding: 14px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(10,36,99,.3);
+    }
+    .phone-label {
+      color: #90beff;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .phone-number {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      direction: ltr;
+      display: block;
+    }
+
+    /* CTA buttons */
+    .cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 50px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .95rem;
+      font-weight: 800;
+      padding: 14px 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-call {
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-dark));
+      color: var(--white);
+      box-shadow: 0 8px 22px rgba(30,111,191,.45);
+    }
+    .btn-call:hover { box-shadow: 0 12px 28px rgba(30,111,191,.6); }
+
+    .btn-wa {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: var(--white);
+      box-shadow: 0 8px 22px rgba(37,211,102,.4);
+    }
+    .btn-wa:hover { box-shadow: 0 12px 28px rgba(37,211,102,.6); }
+
+    /* divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(30,111,191,.2), transparent);
+      margin: 20px 0;
+    }
+
+    /* footer */
+    .card-footer {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .footer-text {
+      color: rgba(255,255,255,.65);
+      font-size: .75rem;
+      margin-bottom: 6px;
+    }
+    .designer-credit {
+      color: rgba(255,255,255,.85);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .designer-credit a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .designer-credit a:hover { text-decoration: underline; }
+
+    /* ── floating circular buttons ── */
+    .float-btns {
+      position: fixed;
+      left: 16px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 999;
+    }
+    .float-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+      transition: transform .2s, box-shadow .2s;
+      animation: floatIn .6s ease both;
+      font-size: 1.4rem;
+    }
+    .float-btn:hover { transform: scale(1.12); }
+    .float-btn-wa  { background: var(--green-wa); animation-delay: .1s; }
+    .float-btn-call{ background: var(--blue-mid); animation-delay: .2s; }
+    @keyframes floatIn {
+      from { opacity:0; transform:scale(.6); }
+      to   { opacity:1; transform:scale(1); }
+    }
+
+    /* tooltip */
+    .float-btn::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 62px;
+      background: rgba(0,0,0,.75);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-size: .7rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .float-btn:hover::after { opacity: 1; }
+
+    /* ripple on float buttons */
+    .float-btn-wa .ripple, .float-btn-call .ripple {
+      position: absolute;
+      border-radius: 50%;
+      width: 54px; height: 54px;
+      animation: ripple 2s linear infinite;
+      opacity: 0;
+    }
+    .float-btn-wa .ripple  { border: 3px solid var(--green-wa); }
+    .float-btn-call .ripple{ border: 3px solid var(--blue-light); }
+    @keyframes ripple {
+      0%   { transform:scale(1);   opacity:.5; }
+      100% { transform:scale(2.2); opacity:0; }
+    }
+
+    @media (max-width: 400px) {
+      .brand-name { font-size: 1.3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wave-top"></div>
+
+<!-- ── floating side buttons ── -->
+<div class="float-btns">
+  <a class="float-btn float-btn-wa"
+     href="https://wa.me/966550384058"
+     target="_blank" rel="noopener"
+     data-tip="واتساب"
+     style="position:relative;">
+    <span class="ripple"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+  </a>
+  <a class="float-btn float-btn-call"
+     href="tel:0550384058"
+     data-tip="اتصال"
+     style="position:relative;">
+    <span class="ripple" style="animation-delay:.5s;"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ── main card ── -->
+<div class="card">
+
+  <!-- header -->
+  <div class="card-header">
+    <div class="logo-circle">💧</div>
+    <div class="brand-name">أبو الشيماء</div>
+    <div class="brand-sub">لتنظيف وتعقيم الخزانات</div>
+    <div class="city-badge">
+      <span>📍</span> مكة المكرمة
+    </div>
+  </div>
+
+  <!-- body -->
+  <div class="card-body">
+
+    <!-- offer -->
+    <div class="offer-strip">
+      <div class="offer-label">🔥 عرض خاص</div>
+      <div class="offer-text">أسعار تنافسية · جودة مضمونة · خدمة فورية</div>
+    </div>
+
+    <!-- services -->
+    <div class="section-title">خدماتنا</div>
+    <div class="services-grid">
+      <div class="service-item"><span class="service-icon">🧹</span> تنظيف الخزانات</div>
+      <div class="service-item"><span class="service-icon">🧴</span> تعقيم وتطهير</div>
+      <div class="service-item"><span class="service-icon">💦</span> غسيل احترافي</div>
+      <div class="service-item"><span class="service-icon">🔬</span> فحص جودة المياه</div>
+      <div class="service-item"><span class="service-icon">🏠</span> خزانات سطح</div>
+      <div class="service-item"><span class="service-icon">🏢</span> خزانات أرضية</div>
+    </div>
+
+    <!-- features -->
+    <div class="section-title">لماذا نحن؟</div>
+    <ul class="features-list">
+      <li>
+        <span class="check-icon">✓</span>
+        فريق متخصص ومدرب باحترافية عالية
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        مواد تنظيف معتمدة وآمنة للصحة
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        خدمة سريعة والتزام بالمواعيد
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        أسعار شفافة بدون تكاليف خفية
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        متاحون 7 أيام في الأسبوع
+      </li>
+    </ul>
+
+    <!-- phone -->
+    <div class="phone-box">
+      <div class="phone-label">📞 للتواصل والحجز</div>
+      <a class="phone-number" href="tel:0550384058" style="color:#fff;text-decoration:none;">
+        0550384058
+      </a>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:0550384058">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        اتصل الآن
+      </a>
+      <a class="btn btn-wa" href="https://wa.me/966550384058" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+        واتساب
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <p style="text-align:center; color:#6b8eb3; font-size:.78rem; font-weight:600;">
+      نخدم جميع أحياء مكة المكرمة · خدمة 24/7
+    </p>
+
+  </div><!-- end card-body -->
+
+  <!-- footer -->
+  <div class="card-footer">
+    <div class="designer-credit">
+      تم التصميم بواسطة
+      <a href="https://wa.me/201029095046" target="_blank" rel="noopener">م. نجوي إبراهيم</a>
+    </div>
+    <div class="footer-text" style="margin-top:6px;">
+      &copy; 2025 أبو الشيماء لتنظيف الخزانات · جميع الحقوق محفوظة
+    </div>
+  </div>
+
+</div><!-- end card -->
+
+<script>
+  // smooth scroll-reveal (no libraries needed)
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.service-item, .features-list li');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+          }, i * 60);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    items.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity .4s ease, transform .4s ease';
+      observer.observe(el);
+    });
+  });
+</script>
+</body>
+</html>
